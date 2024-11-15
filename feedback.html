@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <style>
+        body{
+            margin:50px;
+            background-color: antiquewhite;
+            font-family: Arial, sans-serif;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .feedback{
+             
+             width: 100%;
+             max-width:900px;
+             margin: 0 auto;
+             background-color: #C3E2C2;
+             padding: 20px 40px;
+             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+             border-radius: 10px;
+             border: 8px #1e6f1b double;
+             text-align: center;
+             font-size: large;
+         }
+         h4{
+             font-size: xx-large;
+             font-family: cursive;
+         }
+         .feedback a{
+             background-color: #1e6f1b;
+             color: #b8db84;
+             padding: 20px;
+             border-radius: 8px;
+             text-decoration: none;
+         }
+         .feedback a:hover{
+             background-color: #a1d553;
+         }
+         .feedback{
+             font-size: x-large;
+         }
+        .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      padding: 10px;
+      box-sizing: border-box;
+      
+        }
+        .gallery img {
+      width: 100%;
+      height: 10em;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      border: 8px #1e6f1b double;
+        }
+        .hamburger {
+            
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            align-items: end;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #090303;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+        .nav-menu {
+            display: none;
+            flex-direction: column;
+            background-color:#5B8A72;
+            padding: 10px;
+            position:fixed;
+            width: 100%;
+        }
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+        }
+        .nav-menu a:hover {
+            background-color: #0f4127;
+        }
+        .nav-menu.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+<nav class="nav-menu" id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="Species List.HTML">Species List</a>
+    <a href="threat.html">Threats</a>
+    <a href="conservation.html">Conservation Efforts</a>
+    <a href="how_to_help.html">How to help</a>
+    <a href="feedback.html">Feedback</a>
+</nav>
+    <div class="feedback">
+        <h4>FEEDBACK</h4>
+        <p>Your feedback matters and we would love to hear some suggestions! <br> <br><br> <a href="https://forms.gle/bfG13ERw4JnJBYD19" target="_blank"> Your Feedback</a></p>
+    
+    </div>
+    <div class="gallery">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlhvIzwh6v9yDjYp74VHn012vueGH822gbCg&s" alt="Image 1">
+        <img src="https://d1jyxxz9imt9yb.cloudfront.net/program/241/preview_image/regular/1_ElephantWithKeeper.jpg" alt="Image 2">
+        <img src="https://www.balisafarimarinepark.com/wp-content/uploads/2019/08/bon-bon-in-bali-safari.jpg" alt="Image 3">
+        <img src="https://genv.org/wp-content/uploads/2022/03/dog-g2b94508b6_1920-1800x1199.jpg" alt="Image 4">
+        <img src="https://d1jyxxz9imt9yb.cloudfront.net/medialib/2128/image/s1300x1300/WR202002_KoalaRehab_019_379110_reduced.jpg" alt="Image 5">
+        <img src="https://i.ytimg.com/vi/ctuO2irumS0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCbuncF9tC4AUYlhMJGNlgIalUZ1Q" alt="Image 6">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpqTUPYk3OKEmhjrVyyX3wT46fV4noYVPbXQ&s" alt="Image 7">
+        <img src="https://images.squarespace-cdn.com/content/v1/5585a9bae4b08677430390e7/1582064139879-OPTIWTBUXHYWTJ8GWVAW/Samantha.jpg" alt="Image 8">
+      </div>
+      <script>
+        function toggleMenu() {
+            var navMenu = document.getElementById("navMenu");
+            navMenu.classList.toggle("active");
+        }
+        </script>
+</body>
+</html>

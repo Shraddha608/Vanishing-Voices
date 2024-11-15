@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conservation Efforts for Endangered Species</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:#E7E8D8;
+            margin: 0;
+            padding: 20px;
+        }
+        .content1 {
+            background-color:#CADABF;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 800px;
+            border: 8px #B5CFB7 double ;
+            font-size: large;
+            
+        }
+
+       h1{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       text-align: center;
+       color: #BC9F8B;
+       font-size: 1.5cm;
+    }
+    p{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 600;
+    }
+
+       .content1 ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+        .image-container1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .image-container1 img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .content {
+            background-color: #CADABF;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            border: 8px #B5CFB7 double ;
+            font-size: large;
+        }
+    
+        .content ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .scheme-title {
+            font-weight: bold;
+            color: #39845b;
+        }
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            height: 5em;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            top: 20px;
+            right: 20px;
+        }
+    .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #392b0c;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+    .nav-menu {
+            display: none;
+            flex-direction: column;
+            background-color:#BC9F8B;
+            padding: 10px;
+        }
+    .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+        }
+    .nav-menu a:hover {
+            background-color: #392b0c;
+        }
+    
+    .nav-menu.active {
+            display: flex;
+        }
+    
+        .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.gallery-item {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.gallery img{
+    width: 100%;
+    height: 225px;
+    border: 5px #392b0c double ;
+
+}
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 8px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#caption {
+    color: rgb(255, 255, 255);
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+    </style>
+</head>
+<body>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+<nav class="nav-menu" id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="species_list.html">Species List</a>
+    <a href="threat.html">Threats</a>
+    <a href="conservation.html">Conservation Efforts</a>
+    <a href="how_to_help.html">How to help</a>
+    <a href="feedback.html">Feedback</a>
+</nav>
+    <h1> <u>Conservation Efforts for Endangered Species</u></h1>
+    
+    <div class="content1">
+        <p>Conservation of endangered species involves coordinated global efforts aimed at protecting wildlife and their habitats. Here are some of the key strategies being implemented to safeguard the future of endangered species:</p>
+        <ul>
+            <li><strong><u colo>Habitat Protection:</u></strong> Establishing protected areas such as national parks, wildlife reserves, and marine sanctuaries helps preserve natural habitats from deforestation, urbanization, and industrial activities.</li>
+            <li><strong><u>Anti-Poaching Measures:</u></strong> Strengthening anti-poaching laws, deploying rangers, and utilizing modern technology such as drones and surveillance cameras help prevent illegal hunting and trading of endangered species.</li>
+            <li><strong><u>Breeding Programs:</u></strong> Captive breeding programs aim to increase the population of critically endangered species, with the goal of reintroducing them into their natural habitats when conditions are favorable.</li>
+            <li><strong><u>Community Involvement:</u></strong> Engaging local communities in conservation efforts fosters sustainable practices, creates economic incentives for conservation, and raises awareness about the importance of protecting wildlife.</li>
+            <li><strong><u>Pollution Control:</u></strong> Reducing pollution through stricter regulations on industrial waste, plastic use, and chemical discharge helps maintain healthy ecosystems for wildlife.</li>
+            <li><strong><u>Climate Change Mitigation:</u></strong> Implementing measures to combat climate change, such as reducing greenhouse gas emissions and promoting renewable energy, supports the long-term survival of species affected by changing weather patterns.</li>
+            <li><strong><u>International Cooperation:</u></strong> Countries working together through treaties and agreements, such as the Convention on International Trade in Endangered Species (CITES), help regulate and restrict activities that threaten wildlife across borders.</li>
+        </ul>
+        
+        <div class="image-container1">
+            <img src="https://www.ielts.net/wp-content/uploads/2024/09/endangered_species_conservation-66ef1a.webp" alt="Conservation Efforts">
+        </div>
+    </div>
+    <h1><u>Government Schemes for Endangered Species Conservation</u></h1>
+    
+    <div class="content">
+        <p>Governments worldwide have launched various schemes and initiatives aimed at the conservation of endangered species and the restoration of their habitats. Below are some prominent government schemes that contribute significantly to wildlife conservation:</p>
+        <ul>
+            <li>
+                <span class="scheme-title"><u>Project Tiger:</u></span> A major initiative by the Indian government to protect tigers from poaching and habitat destruction, launched in 1973. It focuses on establishing tiger reserves across the country.
+            </li>
+            <li>
+                <span class="scheme-title"><u>Endangered Species Act (USA):</u></span> A U.S. law enacted in 1973, aimed at protecting critically endangered species from extinction by conserving their habitats and regulating harmful activities.
+            </li>
+            <li>
+                <span class="scheme-title"><u>Species Recovery Plan (Australia):</u></span> Australia implements various species recovery plans that outline actions needed to protect threatened species and their ecosystems, focusing on research, habitat restoration, and threat mitigation.
+            </li>
+            <li>
+                <span class="scheme-title"><u>The European Union’s Natura 2000 Network:</u></span> An initiative to establish protected areas across Europe to conserve endangered species and their habitats, involving member states to meet conservation targets.
+            </li>
+            <li>
+                <span class="scheme-title"><u>National Wildlife Action Plan (India):</u></span> The plan provides a framework for wildlife conservation in India, addressing issues such as habitat fragmentation, poaching, and climate change impacts on species.
+            </li>
+            <li>
+                <span class="scheme-title"><u>Operation Save Kurma (India):</u></span> A special drive aimed at curbing illegal trade in turtles and tortoises, implemented by the Wildlife Crime Control Bureau and forest departments in India.
+            </li>
+            <li>
+                <span class="scheme-title"><u>The Wildlife Conservation and Management Act (Kenya):</u></span> This act provides legal protection for endangered species, enforces anti-poaching laws, and promotes sustainable wildlife management practices.
+            </li>
+        </ul>
+        
+    </div>
+    <div class="gallery">
+        <img src="https://pbs.twimg.com/media/F2XIxFYakAA-bAk.jpg" alt="Project Tiger was initiated in 1973 by the Ministry of Environment, Forest and Climate Change of the Government of India. The project was initiated to protect the Bengal Tiger and its habitats and to establish dedicated tiger reserves for sustaining tiger populations." class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuoKhHpC9wPgHAp_HqNZAVE5PuJvF8Pzt9yw&s" alt="Tamil Nadu established the Tamil Nadu Endangered Species Conservation Fund (TNESCF)
+
+        ## The government of Tamil Nadu has established the Tamil Nadu Endangered Species Conservation Fund (TNESCF) of Rs 50 crore to protect the purple frog and other lesser-known endangered species.
+        
+        ## Alongwith purple frog, others like the pangolin and the Nilgiri Marten, are also facing threats from habitat loss, climate change, and human activities.
+        
+        ## The initiative aims to shine a spotlight on these creatures, ensuring they receive the attention and protection they desperately need." class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://slideplayer.com/2/763772/big_thumb.jpg" alt="Once a species becomes listed as endangered or threatened, it receives special protections by the federal government. Animals are protected from “take” and being traded or sold.The term TAKE used in the Endangered Species Act to include, harass, harm, pursue, hunt, shoot, wound, kill trap, capture, or collect, or to attempt to engage in any such conduct. The law also protects against interfering in vital breeding and behavioral activities or degrading critical habitat" class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://myvetfinder.net/storage/images/blogs/25_endangered_species_rescued_in_angeles_pampanga.png" alt="The local government of Angeles City was able to rescue three (3) Philippine long-tailed macaques, seven (7) reticulated pythons, a Philippine pangolin, a grass owl, twelve (12) scorpions, and a Philippine scops owl because of the dedicated commitment of the City Environment and Natural Resources Office, headed by Rosendo Makabali, in collaboration with the City Veterinary Office under the guidance of Dr. Christian Xyric Arcilla, to conserve and protect the rich biodiversity of the city which has played a vital role in ensuring the well being of these endangered animals." class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://reviverestore.org/wp-content/uploads/2018/03/Toolkit.jpeg" alt="
+        BIOBANKS-store biological samples for research and as a backup resource to preserve genetic diversity.GENOMICS-The growing database of genomes, combined with advances in big data and artificial intelligence, allows researchers to screen entire communities through DNA left in their environments (eDNA), establishing non-invasive means of tracking species.BIOSYNTHESIS-a famous example of it is insulin produced by engineered bacteria. Bacterial production of insulin increased its availability and reduced costs by eliminating the need to harvest it from domestic animals.
+
+        This same process can reduce the commercial need to extract biological products from wild species.REPRODUCTIVE TECHNOLOGIES-Cloning could be a game-changer when it comes to helping recovering and critically imperiled mammals. Cloning biobanked cell lines could help restore genetic diversity to endangered species.GENE DRIVE-A gene drive is the process by which a variant of a gene is inherited in a way that breaks the 50-50 sex chance rule of sexual reproduction. Gene drives occur throughout nature, and scientists have speculated using them for targeted purposes for years. It is now possible to target drives to any gene. " class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7-zjW1mhaanLfVdGme7ufQala3JC015mx2RqsnbP1sMMiakm78ECIatB_ah6i0IzQESo&usqp=CAU" alt="National Endangered Species Day, observed on May 19, encourages biologists and animal lovers to work together to protect endangered species. Midway through the 1800s, conservation began to gather traction. The US Endangered Species Act of 1973, which created a framework for preservation, gave it a further boost. Some people favor natural selection over human intervention as a means of ensuring the survival of species." class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://defenders-cci.org/publication/esa-funding-needs/featured_huc481276552365ce4ad34e266c5e05428_83989_800x0_resize_q90_lanczos.JPG" alt="An analysis of the funding needed for the US Fish and Wildlife Service to properly implement the US Endangered Species Act." class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://www.ciobulletin.com/assets/home_image/ciobulletin-jambu-zoo-jammu.webp" alt="At Jambu Zoo in Jammu's Jagti, the Jammu and Kashmir wildlife protection department has introduced an adoption program that enables anyone to adopt endangered species as part of their conservation efforts. This program seeks to give people a special chance to help and take care of animals while also involving the community in the preservation of wildlife.In order to encourage a sense of responsibility and connection, adopters' names and photos will be put on plaques outside the enclosures housing the animals they have chosen." class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://i0.wp.com/kateonconservation.com/wp-content/uploads/2020/07/endangered-species-e1595871124408-1024x1021.png?resize=640%2C638&ssl=1" alt="According to the Red List of Threatened Species compiled by the International Union for the Conservation of Nature (IUCN), more than 28,000 species around the world are threatened with extinction.
+        That translates to 27% of all assessed species considered to be under threat. Some of the many reasons why these species may be at risk are: habitat loss, poaching, loss of genetic variation and invasive species" class="gallery-item" onclick="openLightbox(this)">
+        <img src="https://static.wixstatic.com/media/75efe7_433906431fcb4c908fc415275d6666d1~mv2.jpg" alt="Celebrate the beauty of wildlife and flora, raise awareness of the benefits of wildlife conservation, and fight wildlife crime 
+        History
+        The United Nations General Assembly proclaimed March 3 as WWD on December 20, 2013. The date was chosen because it's the day the Convention on International Trade in Endangered Species of Wild Fauna and Flora (CITES) was adopted in 1973 " class="gallery-item" onclick="openLightbox(this)"><!-- Add more images as needed -->
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+        <div id="caption"></div>
+    </div>
+    <script>
+
+function openLightbox(element) {
+    var lightbox = document.getElementById('lightbox');
+    var lightboxImage = document.getElementById('lightboxImage');
+    var caption = document.getElementById('caption');
+
+    lightbox.style.display = 'flex';
+    lightboxImage.src = element.src;
+    caption.textContent = element.alt;
+}
+function closeLightbox() {
+    var lightbox = document.getElementById('lightbox');
+    lightbox.style.display = 'none';
+}
+
+</script>
+      <script>
+        function toggleMenu() {
+            var navMenu = document.getElementById("navMenu");
+            navMenu.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to help</title>
+    <style>
+        body {
+            background-color: #BFCBA8;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            margin: 0;
+        }
+        .left-column {
+            width: 50%;
+            margin-right: 50px;
+            margin-left: 0px;
+        }
+        .right-column {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .donation-links a {
+            text-decoration: none;
+            color: bisque;
+        }
+        .donation-links a:hover {
+            color: black;
+        }
+        .donation-links, .volunteer-opportunities, .environment-tips {
+            background-color: #5B8A72;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            margin-bottom: 20px;
+            border: #256b47 5px double;
+        }
+        .donation-links, .volunteer-opportunities, .environment-tips {
+            color: bisque;
+            font-size: large;
+        }
+        h2 {
+            text-align: left;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: rgb(14, 13, 12);
+        }
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 1000;
+            font-style: italic;
+            background-color: #5B8A72;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: justify;
+        }
+        p {
+            font-size: larger;
+        }
+        .image-gallery {
+            background-color: #5B8A72;
+            padding: 20px;
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            width: 100%;
+        }
+        .image-gallery img {
+            width: 100%;
+            border-radius: 8px;
+            height: auto;
+        }
+        .abc {
+            color: #0f4127;
+        }
+        .hamburger {
+            
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            align-items: flex-end;
+            justify-content: flex-end;
+            position:fixed;
+            right: 20px;
+            top: 20px;
+        }
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: 0.3s;
+        }
+        .nav-menu {
+            display: none;
+            flex-direction: column; 
+            background-color:#5B8A72;
+            padding: 10px;
+            position:fixed;
+            width: 100%;
+        }
+        .nav-menu a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px;
+        }
+        .nav-menu a:hover {
+            background-color: #0f4127;
+        }
+        .nav-menu.active {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="species_list.html">Species List</a>
+        <a href="threat.html">Threat</a>
+        <a href="conservation.html">Conservation Efforts</a>
+        <a href="how_to_help.html">How to help</a>
+        <a href="feedback.html">Feedback</a>
+    </nav>
+    <div class="left-column">
+        <h1>Here are some ways by which you can help endangered species</h1>
+        <h2>Support Conservation Efforts</h2>
+        <div class="donation-links">
+            <p>Help protect endangered species by donating to these organizations:</p>
+            <ul>
+                <li><a href="https://www.worldwildlife.org/" target="_blank">World Wildlife Fund (WWF)</a></li>
+                <li><a href="https://www.conservation.org/" target="_blank">Conservation International</a></li>
+                <li><a href="https://www.nature.org/" target="_blank">The Nature Conservancy</a></li>
+                <li><a href="https://www.rainforest-alliance.org/" target="_blank">Rainforest Alliance</a></li>
+            </ul>
+        </div>
+        <h2>Volunteer Opportunities</h2>
+        <div class="volunteer-opportunities">
+            <p>Get involved with these volunteer activities to help conserve wildlife and their habitats:</p>
+            <ul>
+                <li>Join a <strong class="abc">local beach clean-up</strong> to help reduce plastic pollution.</li>
+                <li>Participate in <strong class="abc">wildlife surveys</strong> to help scientists gather data on endangered species.</li>
+                <li>Volunteer at a <strong class="abc">local animal rescue</strong> or wildlife rehabilitation center.</li>
+                <li>Attend <strong class="abc">conservation events</strong> or fundraisers hosted by local organizations.</li>
+            </ul>
+        </div>
+        <h2>Reduce Your Environmental Impact</h2>
+        <div class="environment-tips">
+            <p>Here are some tips to help you live more sustainably and support conservation:</p>
+            <ul>
+                <li><strong class="abc">Reduce Plastic Use:</strong> Avoid single-use plastics and use reusable bags, bottles, and containers.</li>
+                <li><strong class="abc">Support Sustainable Products:</strong> Purchase products made from recycled materials or that are certified eco-friendly.</li>
+                <li><strong class="abc">Conserve Water:</strong> Take shorter showers and fix any leaks to reduce water consumption.</li>
+                <li><strong class="abc">Advocate for Wildlife-Friendly Policies:</strong> Support laws and regulations that protect endangered species and their habitats.</li>
+                <li><strong class="abc">Reduce Energy Consumption:</strong> Turn off lights and unplug electronics when not in use.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="right-column">
+        <div class="image-gallery">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyf3ptBuF_cA4mDxkdBqF2tj7EkUhfBPIvnA&s" alt="Conservation Project 1">
+            <img src="https://www.aramcolife.com/-/media/aramco-life/publications/the-arabian-sun/articles/2023/week-20-photos/endangered-species/1arabianoryx.jpg" alt="Conservation Project 2">
+            <img src="https://discovery.sndimg.com/content/dam/images/discovery/editorial/packages/georgia-aquarium/endangered-species/Beluga%20whale.jpg.rend.hgtvcom.616.411.suffix/1654706692841.jpeg" alt="Conservation Project 3">
+            <img src="https://www.goeco.org/wp-content/uploads/2020/09/article-how-to-help-endangered-species-06.jpg" alt="Conservation Project 4">
+            <img src="https://newsfeed.time.com/wp-content/uploads/sites/9/2012/08/2012-08-14t115243z_10871317.jpg?w=720&h=480&crop=1" alt="Conservation Project 5">
+            <img src="https://www.activewild.com/wp-content/uploads/2021/08/Red-Panda.jpg" alt="Conservation Project 6">
+            <img src="https://static.toiimg.com/photo/msid-108796156,width-96,height-65.cms" alt="Conservation Project 6">
+            <img src="https://d1jyxxz9imt9yb.cloudfront.net/medialib/4508/image/s768x1300/AdobeStock_513577824_522660_reduced.jpg" alt="Conservation Project 6">
+            <img src="https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/55A2/production/_91022912_mediaitem91022911.jpg" alt="Conservation Project 6">
+            <img src="https://www.thoughtco.com/thmb/rOamVzEuKLXGA_zwJgDEoB3-OzA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-814354-8637d349f4f946ba92c32a1ba99f4e21.jpg" alt="Conservation Project 6">
+            
+
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            var navMenu = document.getElementById("navMenu");
+            navMenu.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
+

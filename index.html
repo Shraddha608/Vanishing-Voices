@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanishing Voices</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0%;
+        padding: 0%;
+        background-color: #7ec36d
+        
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #2d8e59;
+        color: #fff;
+      }
+      header h1 {
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+      }
+      .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 4px 0;
+        transition: 0.3s;
+      }
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #89ed9379;
+        padding: 10px;
+      }
+      .nav-menu a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+      }
+      .nav-menu a:hover {
+        background-color: #0f5f27;
+      }
+      .nav-menu.active {
+        display: flex;
+      }
+      .top {
+        background-color: #7ec36d;
+        padding: 20px;
+        text-align: center;
+      }
+      .top img {
+        width: 100%;
+        max-width: 600px;
+        height: 500px;
+        display: block;
+        margin: 0 auto;
+        border-radius: 8px;
+      }
+      .top h1 {
+        margin: 20px 0 10px;
+        font-size: 2.5em;
+        color: #333;
+      }
+      .top p {
+        font-size: 1.2em;
+        color: #ffffff;
+        background-color: #1f6327;
+        padding: 15px;
+        border: 5px rgb(223, 239, 249) solid;
+        border-radius: 15px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      .endangered {
+        padding: 25px;
+        background-color: rgb(175, 209, 107);
+        border: 5px darkgreen double;
+        border-radius: 8px;
+        max-width: 800px;
+        justify-content: space-between;
+        margin: auto;
+      }
+      .endangered h2 {
+        font-size: xx-large;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .endangered p {
+        font-size: x-large;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .abc a {
+        text-decoration: none;
+        font-size: larger;
+        background-color: darkgreen;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: auto;
+        justify-content: space-between;
+      }
+      .abc a{
+        text-align: center;
+      }
+      .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 8px;
+      border: 5px darkgreen double;
+      background-color:rgb(175, 209, 107);
+    }
+    .importance, .objectives {
+      margin-bottom: 20px;
+    }
+    .importance h2, .objectives h2 {
+      color: #080a0a;
+      font-size: xx-large;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    p {
+      Font-size: x-large;;
+      line-height: 1.6;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Vanishing Voices</h1>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </header>
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="species_list.html">Species List</a>
+      <a href="threat.html">Threats</a>
+      <a href="conservation.html">Conservation Efforts</a>
+      <a href="how_to_help.html">How to help</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+    <div class="top">
+      <img
+        src="https://thumbs.dreamstime.com/b/conceptual-art-art-which-idea-concept-behind-work-more-important-than-finished-art-object-emerged-as-326120306.jpg"
+        alt="Header Image"
+      />
+
+      <p>
+        “We don’t own the planet Earth, we belong to it. And we must share it
+        with our wildlife.” –
+        <em
+          >Steve Irwin, renowned Australian wildlife expert and
+          conservationist.</em
+        >
+      </p>
+    </div>
+    <div class="endangered">
+      <h2>
+        <b><i>What are Endangered Species?</i></b>
+      </h2>
+      <p>
+        An endangered species is a species that is very likely to become extinct
+        in the near future, either worldwide or in a particular political
+        jurisdiction. Endangered species may be at risk due to factors such as
+        habitat loss, poaching, invasive species, and climate change
+      </p>
+      <div class="abc"><a
+        href="https://en.wikipedia.org/wiki/Endangered_species"
+        target="_blank"
+        >Learn More</a
+      ></div>
+    </div>
+    <div class="container importance">
+      <h2>Importance of Saving Endangered Species</h2>
+      <p>Endangered species play a critical role in maintaining ecological balance and biodiversity. Their loss can disrupt ecosystems, leading to unexpected changes in the environment and negatively impacting other species, including humans. Protecting endangered species helps to preserve biodiversity, which is essential for ecosystem health, resilience, and natural resources. Saving these species also preserves our planet’s natural heritage and ensures that future generations can benefit from the beauty and diversity of wildlife.</p>
+    </div>
+    <div class="container objectives">
+      <h2>Objectives of the Website</h2>
+      <ul>
+        <li><strong>Raise Awareness:</strong> Educate users on endangered species and the critical need for conservation efforts.</li>
+        <li><strong>Provide Reliable Information:</strong> Offer factual information on endangered species, their habitats, and conservation strategies.</li>
+        <li><strong>Encourage Community Engagement:</strong> Motivate users to take part in conservation activities and spread awareness.</li>
+        <li><strong>Support Sustainable Actions:</strong> Guide individuals toward actions they can take to reduce their impact on endangered species.</li>
+        <li><strong>Foster Support for Conservation Efforts:</strong> Connect users with organizations that support endangered species and habitat protection.</li>
+      </ul>
+    </div>
+
+    <script>
+      function toggleMenu() {
+        var navMenu = document.getElementById("navMenu");
+        navMenu.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>

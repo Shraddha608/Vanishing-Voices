@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Species Directory</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #96bf77;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px;
+        text-align: center;
+      }
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+      }
+
+      .bar {
+        width: 30px;
+        height: 5px;
+        margin: 3px 0;
+        transition: all 0.3s;
+      }
+
+      .filters {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+      }
+
+      .filters input,
+      .filters select {
+        padding: 10px;
+        font-size: 1em;
+        border: 3px black solid;
+        border-radius: 8px;
+        background-color: beige;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background-color: beige;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        text-align: left;
+        border: 8px darkgreen double;
+      }
+
+      .card img {
+        width: 100%;
+        border-radius: 8px;
+        height: auto;
+        border: 2px darkgreen solid;
+      }
+
+      .card a {
+        font-size: 1.5em;
+        margin: 10px 0;
+        text-decoration: none;
+        font-size: medium;
+        color: #020000;
+      }
+      .card a:hover {
+        color: rgb(32, 210, 13);
+      }
+      .card p {
+        color: #020000;
+        font-size: large;
+      }
+      .top {
+        background-color: darkgreen;
+        font-size: larger;
+        padding: 10px;
+        border-radius: 10px;
+        color: beige;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #96bf77;
+        color: #fff;
+      }
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+      }
+      .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 4px 0;
+        transition: 0.3s;
+      }
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #466c28;
+        padding: 10px;
+      }
+      .nav-menu a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+      }
+      .nav-menu a:hover {
+        background-color: #185819;
+      }
+     
+      .nav-menu.active {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="species_list.html">Species List</a>
+      <a href="threat.html">Threats</a>
+      <a href="conservation.html">Conservation Efforts</a>
+      <a href="how_to_help.html">How to help</a>
+      <a href="feedback.html">Feedback</a>
+    </nav>
+    <div class="container">
+      <h1>Species Directory</h1>
+      <p class="top">
+        This section of the website gives you the list of varoius
+        <i><b>Critically Endangered and Endangered Species.</b></i>
+      </p>
+      <div class="filters">
+        <input
+          type="text"
+          id="searchBar"
+          placeholder="Search by name..."
+          onkeyup="filterAnimals()"
+        />
+        <select id="habitatFilter" onchange="filterAnimals()">
+          <option value="">All Habitats</option>
+          <option value="Forest">Forest</option>
+          <option value="Ocean">Ocean</option>
+          <option value="Savannah">Savannah</option>
+        </select>
+        <select id="statusFilter" onchange="filterAnimals()">
+          <option value="">All Statuses</option>
+          <option value="Critically Endangered">Critically Endangered</option>
+          <option value="Endangered">Endangered</option>
+
+        </select>
+      </div>
+      <div class="grid" id="animalGrid">
+        <div
+          class="card"
+          data-name="African Forest Elephant"
+          data-habitat="Forest"
+          data-status=" Critically Endangered"
+        >
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-1kzFJ96SODqR4NsgIds8a5BiwV6PmXZqVA&s"
+            alt="African Forest Elephant"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/african-forest-elephant"
+            target="_blank"
+            ><h2>African Forest Elephant</h2></a
+          >
+          <p>Habitat: Forest</p>
+          <p>Status: Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Amur Leopard"
+          data-habitat="Forest"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://files.worldwildlife.org/wwfcmsprod/images/Amur_Leopard_/story_full_width/9g51xqtsf1_amur_leopard_99144569.jpg"
+            alt="Amur Leopard"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/amur-leopard"
+            target="blank"
+            ><h2>Amur Leopard</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Black Rhino"
+          data-habitat="Savannah"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://files.worldwildlife.org/wwfcmsprod/images/Black_Rhino_8.6.2012_Hero_and_Circle_HI_48366.jpg/story_full_width/6wmmiztlbs_Black_Rhino_8.6.2012_Hero_and_Circle_HI_48366.jpg"
+            alt="Black Rhino"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/black-rhino"
+            target="_blank"
+            ><h2>Black Rhino</h2></a
+          >
+          <p>Habitat:Savanaah</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Bornean Orangutan"
+          data-habitat="Forest"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://www.apex-expeditions.com/wp-content/uploads/2019/08/Orangutan-with-baby_iStock-750x500.jpg"
+            alt="Bornean Orangutan"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/bornean-orangutan"
+            target="_blank"
+            ><h2>Bornean Orangutan</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Cross River Gorilla"
+          data-habitat="Forest"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://kabiragorillasafaris.com/wp-content/uploads/2022/09/cross-river-gorilla-population-1024x683.jpg"
+            alt="Cross River Gorilla"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/cross-river-gorilla"
+            target="_blank"
+            ><h2>Cross River Gorilla</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Eastern Lowland Gorilla"
+          data-habitat="Forest"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://d1jyxxz9imt9yb.cloudfront.net/medialib/3625/image/s768x1300/JB_Rwanda_JessicaBoklan_20100623_MG_4119001_reduced.jpg"
+            alt="Eastern Lowland Gorilla"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/eastern-lowland-gorilla"
+            target="_blank"
+            ><h2>Eastern Lowland Gorilla</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Hawksbill Turtle"
+          data-habitat="Ocean"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://www.turtletimes.com/wp-content/uploads/2023/08/Sea-turtle-1280x800-1.jpg"
+            alt="Hawksbill Turtle"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/hawksbill-turtle"
+            target="_blank"
+          >
+            <h2>Hawksbill Turtle</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Javan Rhino"
+          data-habitat="Forest"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://img.freepik.com/premium-photo/javan-rhino-critically-endangered-species-red-list_1105604-76085.jpg"
+            alt="Javan Rhino"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/javan-rhino"
+            target="_blank"
+            ><h2>Javan Rhino</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Orangutan"
+          data-habitat="Forest"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://t3.ftcdn.net/jpg/09/45/55/02/360_F_945550279_h00yJaEQnMJBdmcuzrRUR7OHFeld9oAq.jpg"
+            alt="Orangutan"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/orangutan"
+            target="_blank"
+            ><h2>Orangutan</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Saola"
+          data-habitat="Forest"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://media.licdn.com/dms/image/D4E12AQGniCbWy7Eo0w/article-cover_image-shrink_600_2000/0/1683659936527?e=2147483647&v=beta&t=SNugZfxKH9h_0IXmn9_AN1hcdgcIt6NXWAuKpQJt1xw"
+            alt="Saola"
+          />
+          <a href="https://www.worldwildlife.org/species/saola" target="_blank"
+            ><h2>Saola</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Sumatran Elephant"
+          data-habitat="Forest"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://indonesiaexpat.id/wp-content/uploads/2017/12/DSC_4052-735x400.jpg"
+            alt="Sumatran Elephant"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/sumatran-elephant"
+            target="_blank"
+            ><h2>Sumatran Elephant</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Sumatran Orangutan"
+          data-habitat="Forest"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://files.worldwildlife.org/wwfcmsprod/images/Sumatran_Orangutan_8.6.2012_What_WWF_Is_Doing_XL_257637.jpg/story_full_width/7vq2c6bt0y_Sumatran_Orangutan_8.6.2012_What_WWF_Is_Doing_XL_257637.jpg"
+            alt="Sumatran Orangutan"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/sumatran-orangutan"
+            target="_blank"
+            ><h2>Sumatran Orangutan</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Sumatran Rhino"
+          data-habitat="Forest"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://blog.rapusia.org/world/media/image2212.jpg"
+            alt=" Sumatran Rhino"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/sumatran-rhino"
+            target="_blank"
+            ><h2>Sumatran Rhino</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Sunda Tiger"
+          data-habitat="Forest"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://files.worldwildlife.org/wwfcmsprod/images/30_Hills_Sumatran_tiger_resting_47149/story_full_width/63868cijym_3TigerPhoto.jpg"
+            alt="Sunda Tiger"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/sunda-tiger"
+            target="_blank"
+            ><h2>Sunda Tiger</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Vaquita"
+          data-habitat="Ocean"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://cdn.britannica.com/98/244698-050-A4B4CEAD/vaquita-dolphine.jpg"
+            alt="Vaquita"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/vaquita"
+            target="_blank"
+            ><h2>Vaquita</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Western Lowland Gorilla"
+          data-habitat="Forest"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://cdn.britannica.com/64/65364-050-53E75D82/lowland-gorilla.jpg"
+            alt="Western Lowland Gorilla"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/western-lowland-gorilla"
+            target="_blank"
+            ><h2>Western Lowland Gorilla</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Yangtze Finless Porpoise"
+          data-habitat="Ocean"
+          data-status="Critically Endangered"
+        >
+          <img
+            src="https://lh4.googleusercontent.com/proxy/2C1TBTHB8V9OWbn3dHFa5TSc4XO4D6xM5oOC069UIHcr6kQHrZ9Cu3lpD-sKPJid1w6YbjIJLn7VRoga6uEkn7SxNbuLJ_bgqt6cUM67SpTySpfvKf8Xryd92Q"
+            alt="Yangtze Finless Porpoise"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/yangtze-finless-porpoise"
+            target="_blank"
+            ><h2>Yangtze Finless Porpoise</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Critically Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="African Savanna Elephant"
+          data-habitat="Savannah"
+          data-status="Endangered"
+        >
+          <img
+            src="https://i.natgeofe.com/n/b64060fa-343c-481b-a24d-7375fef34914/NationalGeographic_1425689_4x3.jpg"
+            alt="African Savanna Elephant"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/african-savanna-elephant"
+            target="_blank"
+            ><h2>African Savanna Elephant</h2></a
+          >
+          <p>Habitat:Savanaah</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="African Wild Dog"
+          data-habitat="Savanaah"
+          data-status="Endangered"
+        >
+          <img
+            src="https://scx2.b-cdn.net/gfx/news/2020/africanwildd.jpg"
+            alt="African Wild Dog"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/african-wild-dog"
+            target="_blank"
+            ><h2>African Wild Dog</h2></a
+          >
+          <p>Habitat:Savanaah</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Asian Elephant"
+          data-habitat="Savanaah"
+          data-status="Endangered"
+        >
+          <img
+            src="https://tigerreservesinindia.com/wp-content/uploads/2017/01/AB-Apana_1.jpg"
+            alt="Asian Elephant"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/asian-elephant"
+            target="_blank"
+            ><h2>Asian Elephant</h2></a
+          >
+          <p>Habitat:Savanaah</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Black-fotted Ferret"
+          data-habitat="Forest"
+          data-status="Endangered"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Mustela_nigripes_2.jpg"
+            alt="Black-footed Ferret"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/black-footed-ferret"
+            target="_blank"
+            ><h2>Black-footed Ferret</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Blue Whale"
+          data-habitat="Ocean"
+          data-status="Endangered"
+        >
+          <img
+            src="https://environment.co/wp-content/uploads/sites/4/2024/01/squaddeepfx_photorealistic_image_of_a_blue_whale_mother_and_cal_39128ed5-e129-4267-938e-65217468be14.jpg"
+            alt="Blue Whale"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/blue-whale"
+            target="_blank"
+            ><h2>Blue Whale</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Bluefin Tuna"
+          data-habitat="Ocean"
+          data-status="Endangered"
+        >
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRKxFoKEj65HpskBpX9bseKuVTSjEyJpRilg&s"
+            alt="Bluefin Tuna"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/bluefin-tuna"
+            target="_blank"
+            ><h2>Bluefin Tuna</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Bonobo"
+          data-habitat="Forest"
+          data-status="Endangered"
+        >
+          <img
+            src="https://files.worldwildlife.org/wwfcmsprod/images/HERO_Bonobo_Salonga_Congo_DRC/hero_small/v27xe6atd__MA_8993.JPG"
+            alt="Bonobo"
+          />
+          <a href="https://www.worldwildlife.org/species/bonobo" target="_blank"
+            ><h2>Bonobo</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Bornean Elephant"
+          data-habitat="Forest"
+          data-status="Endangered"
+        >
+          <img
+            src="https://png.pngtree.com/thumb_back/fw800/background/20220713/pngtree-the-borneo-pygmy-elephant-also-known-as-the-bornean-elephant-photo-image_32702376.jpg"
+            alt="Bornean Elephant"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/bornean-elephant"
+            target="_blank"
+            ><h2>Bornean Elephant</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Chimpanzee"
+          data-habitat="Forest"
+          data-status="Endangered"
+        >
+          <img
+            src="https://cdn.britannica.com/66/161466-050-6877BAC6/chimpanzees-male-all-lives-females-community-mother.jpg"
+            alt="Chimpanzee"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/chimpanzee"
+            target="_blank"
+          >
+            <h2>Chimpanzee</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Fin Whale"
+          data-habitat="Ocean"
+          data-status="Endangered"
+        >
+          <img
+            src="https://img.freepik.com/premium-photo/close-up-fin-whale-swimming-deep-ocean-natural-background-with-beautiful-lighting_998451-64.jpg"
+            alt="Fin Whale"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/fin-whale"
+            target="_blank"
+          >
+            <h2>Fin Whale</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Glapapagos Penguin"
+          data-habitat="Ocean"
+          data-status="Endangered"
+        >
+          <img
+            src="https://www.discoveringgalapagos.org.uk/wp-content/uploads/2014/11/Bill-Hale-Galapagos-Penguin-C.Sombrero-23.5.2009-e1423066207503.jpg"
+            alt="Glapapagos Penguin"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/galapagos-penguin"
+            target="_blank"
+            ><h2>Glapapagos Penguin</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Ganges River Dolphin"
+          data-habitat="Ocean"
+          data-status="Endangered"
+        >
+          <img
+            src="https://akm-img-a-in.tosshub.com/indiatoday/dolphin-story_647_122917102127_0.jpg?VersionId=hMgshwR9T09VLHeSeuLkZJsG8.9iU8IV&size=690:388"
+            alt="Ganges River Dolphin"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/ganges-river-dolphin"
+            target="_blank"
+            ><h2>Ganges River Dolphin</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Green Turtle"
+          data-habitat="Ocean"
+          data-status="Endangered"
+        >
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzBssWHNCD8BGeWsq88w6SoI7kqOjikva8rQ&s"
+            alt="Green Turtle"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/green-turtle"
+            target="_blank"
+            ><h2>Green Turtle</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Hector's Dolphin"
+          data-habitat="Ocean"
+          data-status="Endangered"
+        >
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvAzzJPcM5PTXraNHDILVYIOvffwjEr_Hmvw&s"
+            alt="Hector's Dolphin"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/hector-s-dolphin"
+            target="_blank"
+            ><h2>Hector's Dolphin</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Humphead Wrasse"
+          data-habitat="Ocean"
+          data-status="Endangered"
+        >
+          <img
+            src="https://s3.amazonaws.com/media.jungledragon.com/images/2994/46905_small.jpg?AWSAccessKeyId=05GMT0V3GWVNE7GGM1R2&Expires=1730937610&Signature=lRH3L8TPz0iEXc4XABIUQEpqSBw%3D"
+            alt="Humphead Wrasse"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/humphead-wrasse"
+            target="_blank"
+            ><h2>Humphead Wrasse</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Indian Elephant"
+          data-habitat="Forest"
+          data-status="Endangered"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/9/98/Elephas_maximus_%28Bandipur%29.jpg"
+            alt="Indian Elephant"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/indian-elephant"
+            target="_blank"
+            ><h2>Indian Elephant</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Indus River Dolphin"
+          data-habitat="Ocean"
+          data-status="Endangered"
+        >
+          <img
+            src="https://critter.science/wp-content/uploads/2021/05/ird1-1180x520.jpg"
+            alt="Indus River Dolphin"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/indus-river-dolphin"
+            target="_blank"
+            ><h2>Indus River Dolphin</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Irrawaddy Dolphin"
+          data-habitat="Ocean"
+          data-status="Endangered"
+        >
+          <img
+            src="https://critter.science/wp-content/uploads/2021/10/id1a-1180x520.png"
+            alt="Irrawaddy Dolphin"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/irrawaddy-dolphin"
+            target="_blank"
+            ><h2>Irrawaddy Dolphin</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Monarch Butterfly"
+          data-habitat="Forest"
+          data-status="Endangered"
+        >
+          <img
+            src="https://i.natgeofe.com/k/c491536c-f34d-4e64-ad27-8ee070dce475/monarch-butterfly-orange-flower.jpg?wp=1&w=1084.125&h=609"
+            alt="Monarch Butterfly"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/monarch-butterfly"
+            target="_blank"
+            ><h2>Monarch Butterfly</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Mountain Gorilla"
+          data-habitat="Forest"
+          data-status="Endangered"
+        >
+          <img
+            src="https://nplimages.infradoxxs.com/cache/pcache2/01320387.jpg"
+            alt="Mountain Gorilla"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/mountain-gorilla"
+            target="_blank"
+            ><h2>Mountain Gorilla</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="North Atlantic Right Whale"
+          data-habitat="Ocean"
+          data-status="Endangered"
+        >
+          <img
+            src="https://www.worldlifeexpectancy.com/images/a/w/b/eubalaena-glacialis/eubalaena-glacialis.webp"
+            alt="North Atlantic Right Whale"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/north-atlantic-right-whale"
+            target="_blank"
+            ><h2>North Atlantic Right Whale</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Red Panda"
+          data-habitat="Forest"
+          data-status="Endangered"
+        >
+          <img
+            src="https://th-thumbnailer.cdn-si-edu.com/nFBwuRaBlBkd0v64_UvWXU1K2aw=/fit-in/1600x0/filters:focal(4381x2523:4382x2524)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/e0/58/e058c2c2-b1d9-491c-abf5-973844b211a0/gettyimages-171399380.jpg"
+            alt="Red Panda"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/red-panda"
+            target="_blank"
+            ><h2>Red Panda</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Sea Lions"
+          data-habitat="Ocean"
+          data-status="Endangered"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/7/74/California_sea_lion_in_La_Jolla_%2870568%29.jpg"
+            alt="Sea Lions"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/sea-lions"
+            target="_blank"
+            ><h2>Sea Lions</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Sea Turtle"
+          data-habitat="Ocean"
+          data-status="Endangered"
+        >
+          <img
+            src="https://www.turtletimes.com/wp-content/uploads/2023/08/Sea-turtle-1280x800-1.jpg"
+            alt="Sea Turtle"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/sea-turtle"
+            target="_blank"
+            ><h2>Sea Turtle</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Sri Lanka Elephant"
+          data-habitat="Forest"
+          data-status="Endangered"
+        >
+          <img
+            src="https://s3.animalia.bio/animals/photos/full/original/x3tAbn9b9nNNE3gJUac6.webp"
+            alt="Sri Lankan Elephant"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/sri-lankan-elephant"
+            target="_blank"
+            ><h2>Sri Lankan Elephant</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Tiger"
+          data-habitat="Forest"
+          data-status="Endangered"
+        >
+          <img
+            src="https://i.natgeofe.com/k/07176791-9577-4e31-b101-b10ca7ca9a3c/Stripes_Tiger-Terrific_KIDS_0722_16x9.jpg"
+            alt="Tiger"
+          />
+          <a href="https://www.worldwildlife.org/species/tiger" target="_blank"
+            ><h2>Tiger</h2></a
+          >
+          <p>Habitat:Forest</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Whale"
+          data-habitat="Ocean"
+          data-status="Endangered"
+        >
+          <img
+            src="https://d1jyxxz9imt9yb.cloudfront.net/medialib/1319/image/s768x1300/Mignon0W0A3760_reduced.jpg"
+            alt="Whale"
+          />
+          <a href="https://www.worldwildlife.org/species/tiger" target="_blank"
+            ><h2>Whale</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Endangered</p>
+        </div>
+        <div
+          class="card"
+          data-name="Whale Shark"
+          data-habitat="Ocean"
+          data-status="Endangered"
+        >
+          <img
+            src="https://www.edgeofexistence.org/wp-content/uploads/2018/11/Rhincodon-typus_shutterstock_485405227.jpg"
+            alt="Whale Shark"
+          />
+          <a
+            href="https://www.worldwildlife.org/species/whale-shark"
+            target="_blank"
+            ><h2>Whale Shark</h2></a
+          >
+          <p>Habitat:Ocean</p>
+          <p>Status:Endangered</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function filterAnimals() {
+        const searchBar = document
+          .getElementById("searchBar")
+          .value.toLowerCase();
+        const habitatFilter = document.getElementById("habitatFilter").value;
+        const statusFilter = document.getElementById("statusFilter").value;
+
+        const cards = document.querySelectorAll(".card");
+
+        cards.forEach((card) => {
+          const name = card.getAttribute("data-name").toLowerCase();
+          const habitat = card.getAttribute("data-habitat");
+          const status = card.getAttribute("data-status");
+
+          const matchesSearch = name.includes(searchBar);
+          const matchesHabitat = !habitatFilter || habitat === habitatFilter;
+          const matchesStatus = !statusFilter || status === statusFilter;
+
+          if (matchesSearch && matchesHabitat && matchesStatus) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+    </script>
+    <script>
+      function toggleMenu() {
+        var navMenu = document.getElementById("navMenu");
+        navMenu.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
